@@ -42,6 +42,8 @@
 		474BCFB31713D82200647216 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BCFA11713D82200647216 /* AFXMLRequestOperation.m */; };
 		474BCFB41713D82200647216 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BCFA31713D82200647216 /* UIImageView+AFNetworking.m */; };
 		474BCFB51713D82200647216 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BCFA31713D82200647216 /* UIImageView+AFNetworking.m */; };
+		474BCFBA1714265800647216 /* WebRequestProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BCFB91714265800647216 /* WebRequestProxy.m */; };
+		474BCFBB1714265800647216 /* WebRequestProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BCFB91714265800647216 /* WebRequestProxy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,8 @@
 		474BCFA11713D82200647216 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		474BCFA21713D82200647216 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		474BCFA31713D82200647216 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		474BCFB81714265800647216 /* WebRequestProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRequestProxy.h; sourceTree = "<group>"; };
+		474BCFB91714265800647216 /* WebRequestProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRequestProxy.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +243,8 @@
 		474BCFB71713D85D00647216 /* WebRequest */ = {
 			isa = PBXGroup;
 			children = (
+				474BCFB81714265800647216 /* WebRequestProxy.h */,
+				474BCFB91714265800647216 /* WebRequestProxy.m */,
 			);
 			path = WebRequest;
 			sourceTree = "<group>";
@@ -366,6 +372,7 @@
 				474BCFB01713D82200647216 /* AFURLConnectionOperation.m in Sources */,
 				474BCFB21713D82200647216 /* AFXMLRequestOperation.m in Sources */,
 				474BCFB41713D82200647216 /* UIImageView+AFNetworking.m in Sources */,
+				474BCFBA1714265800647216 /* WebRequestProxy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +390,7 @@
 				474BCFB11713D82200647216 /* AFURLConnectionOperation.m in Sources */,
 				474BCFB31713D82200647216 /* AFXMLRequestOperation.m in Sources */,
 				474BCFB51713D82200647216 /* UIImageView+AFNetworking.m in Sources */,
+				474BCFBB1714265800647216 /* WebRequestProxy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,7 +465,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -482,7 +490,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -496,6 +504,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StackoverflowReeder/StackoverflowReeder-Prefix.pch";
 				INFOPLIST_FILE = "StackoverflowReeder/StackoverflowReeder-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -507,6 +516,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StackoverflowReeder/StackoverflowReeder-Prefix.pch";
 				INFOPLIST_FILE = "StackoverflowReeder/StackoverflowReeder-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -565,6 +575,7 @@
 				474BCF8C1713D7A300647216 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		474BCF8D1713D7A300647216 /* Build configuration list for PBXNativeTarget "StackoverflowReederTests" */ = {
 			isa = XCConfigurationList;
@@ -573,6 +584,7 @@
 				474BCF8F1713D7A300647216 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
