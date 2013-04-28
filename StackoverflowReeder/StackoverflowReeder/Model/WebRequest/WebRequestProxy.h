@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+@class AFHTTPClient;
+
 @interface WebRequestProxy : NSObject
+
+@property (readonly, nonatomic) AFHTTPClient *httpClint;
+
+- (NSString*)proxyPath;
+- (NSMutableURLRequest*)getRequestWithParams:(NSDictionary*)params;
 
 @end
