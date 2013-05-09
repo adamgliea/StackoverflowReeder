@@ -7,7 +7,8 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+#import "WebQuestionsDelegate.h"
 
-@interface StackoverflowReederTests : SenTestCase
+@interface StackoverflowReederTests : SenTestCase <WebQuestionsDelegate>
 
 @end
