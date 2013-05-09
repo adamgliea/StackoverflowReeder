@@ -14,6 +14,7 @@
 @property (assign, nonatomic) BOOL isWaiting;
 
 - (void)waitNetworkResponse;
+- (void)getQuestionsWithSortType:(enum QuestionSortType)sortType;
 
 @end
 
@@ -34,15 +35,54 @@
     [super tearDown];
 }
 
-- (void)testGetQuestions {
+- (void)testGetQuestionsWithLastActivityDate {
+    [self getQuestionsWithSortType:QuestionSortType_Last_Activity_Date];
+}
+
+- (void)testGetQuestionsWithCreationDate {
+    [self getQuestionsWithSortType:QuestionSortType_Creation_Date];
+}
+
+- (void)testGetQuestionsWithVotes {
+    [self getQuestionsWithSortType:QuestionSortType_Votes];
+}
+
+- (void)testGetQuestionsWithHot {
+    [self getQuestionsWithSortType:QuestionSortType_Hot];
+}
+
+- (void)testGetQuestionsWithWeek {
+    [self getQuestionsWithSortType:QuestionSortType_Week];
+}
+
+- (void)testGetQuestionsWithMonth {
+    [self getQuestionsWithSortType:QuestionSortType_Month];
+}
+
+- (void)testGetQuestionsWithDefault {
+    [self getQuestionsWithSortType:QuestionSortType_Default];
+}
+
+- (void)testGetQuestion {
+    static NSString *testQuestionID = @"16457296";
+    
     QuestionsRequestProxy *proxy = [[QuestionsRequestProxy alloc] init];
     proxy.delegate = self;
     
     self.isWaiting = YES;
-    [proxy questionsBySort:QuestionSortType_Last_Activity_Date
-             questionCount:20
-                 pageIndex:1
-                 ascending:NO];
+    [proxy questionWithQuestionID:testQuestionID];
+    
+    [self waitNetworkResponse];
+}
+
+- (void)testGetQuestionAnswers {
+    static NSString *testQuestionID = @"16457296";
+    
+    QuestionsRequestProxy *proxy = [[QuestionsRequestProxy alloc] init];
+    proxy.delegate = self;
+    
+    self.isWaiting = YES;
+    [proxy questionAnswersWithQuestionID:testQuestionID];
     
     [self waitNetworkResponse];
 }
@@ -59,6 +99,19 @@
     } while (self.isWaiting);
 }
 
+- (void)getQuestionsWithSortType:(enum QuestionSortType)sortType {
+    QuestionsRequestProxy *proxy = [[QuestionsRequestProxy alloc] init];
+    proxy.delegate = self;
+    
+    self.isWaiting = YES;
+    [proxy questionsBySort:sortType
+             questionCount:20
+                 pageIndex:1
+                 ascending:NO];
+    
+    [self waitNetworkResponse];
+}
+
 #pragma mark --
 #pragma mark - WebQuestionsDelegate
 #pragma mark --
@@ -68,6 +121,20 @@
     self.isWaiting = NO;
     
     STAssertNil(error, @"Questions request fail");
+}
+
+- (void)getQuestionDidFinish:(NSDictionary*)result
+                       error:(NSError*)error {
+    self.isWaiting = NO;
+    
+    STAssertNil(error, @"Question request fail");
+}
+
+- (void)getQuestionAnswersDidFinish:(NSDictionary*)result
+                              error:(NSError*)error {
+    self.isWaiting = NO;
+    
+    STAssertNil(error, @"Question answers request fail");
 }
 
 @end

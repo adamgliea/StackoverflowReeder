@@ -22,10 +22,6 @@
 #pragma mark - Public Functions
 #pragma mark --
 
-- (NSString*)proxyPath {
-    return @"questions";
-}
-
 - (void)questionsBySort:(enum QuestionSortType)sortType
           questionCount:(NSUInteger)questionCount
               pageIndex:(NSUInteger)pageIndex
@@ -39,7 +35,7 @@
                              @"page" : [NSNumber numberWithUnsignedInteger:pageIndex],
                              };
     
-    NSMutableURLRequest *request = [self getRequestWithParams:params];
+    NSMutableURLRequest *request = [self getRequestWithPath:@"questions" params:params];
     AFJSONRequestOperation *questionsOperation = [AFJSONRequestOperation
                                                   JSONRequestOperationWithRequest:request
                                                   success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
@@ -47,6 +43,42 @@
                                                   }
                                                   failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
                                                       [self.delegate getQuestionsDidFinish:nil error:nil];
+                                                  }];
+    [questionsOperation start];
+}
+
+- (void)questionWithQuestionID:(NSString*)questionID {
+    assert(questionID != nil);
+    
+    NSDictionary *params = @{@"filter" : @"withbody",};
+    
+    NSString *requestPath = [NSString stringWithFormat:@"questions/%@", questionID, nil];
+    NSMutableURLRequest *request = [self getRequestWithPath:requestPath params:params];
+    AFJSONRequestOperation *questionsOperation = [AFJSONRequestOperation
+                                                  JSONRequestOperationWithRequest:request
+                                                  success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+                                                      [self.delegate getQuestionDidFinish:JSON error:nil];
+                                                  }
+                                                  failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+                                                      [self.delegate getQuestionDidFinish:nil error:nil];
+                                                  }];
+    [questionsOperation start];
+}
+
+- (void)questionAnswersWithQuestionID:(NSString*)questionID {
+    assert(questionID != nil);
+    
+    NSDictionary *params = @{@"filter" : @"withbody",};
+    
+    NSString *requestPath = [NSString stringWithFormat:@"questions/%@/answers", questionID, nil];
+    NSMutableURLRequest *request = [self getRequestWithPath:requestPath params:params];
+    AFJSONRequestOperation *questionsOperation = [AFJSONRequestOperation
+                                                  JSONRequestOperationWithRequest:request
+                                                  success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+                                                      [self.delegate getQuestionAnswersDidFinish:JSON error:nil];
+                                                  }
+                                                  failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+                                                      [self.delegate getQuestionAnswersDidFinish:nil error:nil];
                                                   }];
     [questionsOperation start];
 }

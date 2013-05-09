@@ -23,19 +23,14 @@
 #pragma mark - Public Functions
 #pragma mark --
 
-- (NSString*)proxyPath {
-    return nil;
-}
-
-- (NSMutableURLRequest*)getRequestWithParams:(NSDictionary*)params {
-    NSString *requestPath = [self proxyPath];
-    assert(requestPath != nil);
+- (NSMutableURLRequest*)getRequestWithPath:(NSString*)path params:(NSDictionary*)params {
+    assert(path != nil);
     
     NSMutableDictionary *requestParams = [NSMutableDictionary dictionaryWithDictionary:params];
     requestParams[@"site"] = @"stackoverflow";
     
     return [self.httpClint requestWithMethod:@"GET"
-                                        path:requestPath
+                                        path:path
                                   parameters:requestParams];
 }
 

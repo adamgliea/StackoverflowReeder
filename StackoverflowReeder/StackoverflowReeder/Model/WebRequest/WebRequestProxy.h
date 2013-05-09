@@ -14,7 +14,6 @@
 
 @property (readonly, nonatomic) AFHTTPClient *httpClint;
 
-- (NSString*)proxyPath;
-- (NSMutableURLRequest*)getRequestWithParams:(NSDictionary*)params;
+- (NSMutableURLRequest*)getRequestWithPath:(NSString*)path params:(NSDictionary*)params;
 
 @end

@@ -13,4 +13,10 @@
 - (void)getQuestionsDidFinish:(NSDictionary*)result
                         error:(NSError*)error;
 
+- (void)getQuestionDidFinish:(NSDictionary*)result
+                       error:(NSError*)error;
+
+- (void)getQuestionAnswersDidFinish:(NSDictionary*)result
+                              error:(NSError*)error;
+
 @end

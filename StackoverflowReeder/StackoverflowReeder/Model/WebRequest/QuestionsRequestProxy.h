@@ -29,5 +29,7 @@ enum QuestionSortType {
           questionCount:(NSUInteger)questionCount
               pageIndex:(NSUInteger)pageIndex
               ascending:(BOOL)ascending;
+- (void)questionWithQuestionID:(NSString*)questionID;
+- (void)questionAnswersWithQuestionID:(NSString*)questionID;
 
 @end
