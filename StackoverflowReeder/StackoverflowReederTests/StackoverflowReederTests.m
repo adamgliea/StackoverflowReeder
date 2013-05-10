@@ -8,6 +8,7 @@
 
 #import "StackoverflowReederTests.h"
 #import "QuestionsRequestProxy.h"
+#import "QuestionSimpleInfo.h"
 
 @interface StackoverflowReederTests()
 
@@ -121,6 +122,15 @@
     self.isWaiting = NO;
     
     STAssertNil(error, @"Questions request fail");
+    
+    NSArray *questions = result[@"items"];
+//    STAssertNotNil(questions, @"Questions is nil");
+    
+    [questions enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        NSDictionary *questionInfo = obj;
+        
+        QuestionSimpleInfo *simpleInfo = [[QuestionSimpleInfo alloc] initWithInfo:questionInfo];
+    }];
 }
 
 - (void)getQuestionDidFinish:(NSDictionary*)result

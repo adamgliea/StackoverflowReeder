@@ -24,7 +24,6 @@
 		474BCF691713D7A200647216 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 474BCF681713D7A200647216 /* Default-568h@2x.png */; };
 		474BCF6C1713D7A200647216 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 474BCF6A1713D7A200647216 /* MainStoryboard_iPhone.storyboard */; };
 		474BCF6F1713D7A200647216 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 474BCF6D1713D7A200647216 /* MainStoryboard_iPad.storyboard */; };
-		474BCF721713D7A200647216 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BCF711713D7A200647216 /* ViewController.m */; };
 		474BCF7A1713D7A200647216 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 474BCF791713D7A200647216 /* SenTestingKit.framework */; };
 		474BCF7B1713D7A200647216 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 474BCF521713D7A200647216 /* UIKit.framework */; };
 		474BCF7C1713D7A200647216 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 474BCF541713D7A200647216 /* Foundation.framework */; };
@@ -50,6 +49,11 @@
 		474BCFB51713D82200647216 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BCFA31713D82200647216 /* UIImageView+AFNetworking.m */; };
 		474BCFBA1714265800647216 /* WebRequestProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BCFB91714265800647216 /* WebRequestProxy.m */; };
 		474BCFBB1714265800647216 /* WebRequestProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BCFB91714265800647216 /* WebRequestProxy.m */; };
+		476EA450173CA38C00CCDEBD /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 476EA44F173CA38C00CCDEBD /* MainTabBarViewController.m */; };
+		476EA453173CA51100CCDEBD /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 476EA452173CA51100CCDEBD /* UserProfileViewController.m */; };
+		476EA456173CA9A300CCDEBD /* QuestionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 476EA455173CA9A300CCDEBD /* QuestionsTableViewController.m */; };
+		476EA45A173CADB400CCDEBD /* QuestionSimpleInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 476EA459173CADB400CCDEBD /* QuestionSimpleInfo.m */; };
+		476EA45B173CADB400CCDEBD /* QuestionSimpleInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 476EA459173CADB400CCDEBD /* QuestionSimpleInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,8 +87,6 @@
 		474BCF681713D7A200647216 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		474BCF6B1713D7A200647216 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		474BCF6E1713D7A200647216 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		474BCF701713D7A200647216 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		474BCF711713D7A200647216 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		474BCF781713D7A200647216 /* StackoverflowReederTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StackoverflowReederTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		474BCF791713D7A200647216 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		474BCF811713D7A300647216 /* StackoverflowReederTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StackoverflowReederTests-Info.plist"; sourceTree = "<group>"; };
@@ -112,6 +114,14 @@
 		474BCFA31713D82200647216 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		474BCFB81714265800647216 /* WebRequestProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRequestProxy.h; sourceTree = "<group>"; };
 		474BCFB91714265800647216 /* WebRequestProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRequestProxy.m; sourceTree = "<group>"; };
+		476EA44E173CA38C00CCDEBD /* MainTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainTabBarViewController.h; path = Controller/MainTabBarViewController.h; sourceTree = "<group>"; };
+		476EA44F173CA38C00CCDEBD /* MainTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainTabBarViewController.m; path = Controller/MainTabBarViewController.m; sourceTree = "<group>"; };
+		476EA451173CA51100CCDEBD /* UserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserProfileViewController.h; path = Controller/UserProfileViewController.h; sourceTree = "<group>"; };
+		476EA452173CA51100CCDEBD /* UserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserProfileViewController.m; path = Controller/UserProfileViewController.m; sourceTree = "<group>"; };
+		476EA454173CA9A300CCDEBD /* QuestionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuestionsTableViewController.h; path = Controller/QuestionsTableViewController.h; sourceTree = "<group>"; };
+		476EA455173CA9A300CCDEBD /* QuestionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestionsTableViewController.m; path = Controller/QuestionsTableViewController.m; sourceTree = "<group>"; };
+		476EA458173CADB400CCDEBD /* QuestionSimpleInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuestionSimpleInfo.h; path = DataModel/QuestionSimpleInfo.h; sourceTree = "<group>"; };
+		476EA459173CADB400CCDEBD /* QuestionSimpleInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestionSimpleInfo.m; path = DataModel/QuestionSimpleInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,14 +195,13 @@
 		474BCF581713D7A200647216 /* StackoverflowReeder */ = {
 			isa = PBXGroup;
 			children = (
+				476EA44D173CA28B00CCDEBD /* Controller */,
 				474BCFB61713D85D00647216 /* Model */,
 				474BCF901713D82200647216 /* AFNetworking */,
 				474BCF611713D7A200647216 /* AppDelegate.h */,
 				474BCF621713D7A200647216 /* AppDelegate.m */,
 				474BCF6A1713D7A200647216 /* MainStoryboard_iPhone.storyboard */,
 				474BCF6D1713D7A200647216 /* MainStoryboard_iPad.storyboard */,
-				474BCF701713D7A200647216 /* ViewController.h */,
-				474BCF711713D7A200647216 /* ViewController.m */,
 				474BCF591713D7A200647216 /* Supporting Files */,
 			);
 			path = StackoverflowReeder;
@@ -260,6 +269,7 @@
 		474BCFB61713D85D00647216 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				476EA457173CAD3E00CCDEBD /* DataModel */,
 				47448F69172CE15000AC099D /* WebRequestDelegate */,
 				474BCFB71713D85D00647216 /* WebRequest */,
 			);
@@ -275,6 +285,28 @@
 				47448F62172CDB0900AC099D /* QuestionsRequestProxy.m */,
 			);
 			path = WebRequest;
+			sourceTree = "<group>";
+		};
+		476EA44D173CA28B00CCDEBD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				476EA44E173CA38C00CCDEBD /* MainTabBarViewController.h */,
+				476EA44F173CA38C00CCDEBD /* MainTabBarViewController.m */,
+				476EA451173CA51100CCDEBD /* UserProfileViewController.h */,
+				476EA452173CA51100CCDEBD /* UserProfileViewController.m */,
+				476EA454173CA9A300CCDEBD /* QuestionsTableViewController.h */,
+				476EA455173CA9A300CCDEBD /* QuestionsTableViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		476EA457173CAD3E00CCDEBD /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				476EA458173CADB400CCDEBD /* QuestionSimpleInfo.h */,
+				476EA459173CADB400CCDEBD /* QuestionSimpleInfo.m */,
+			);
+			name = DataModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,7 +422,6 @@
 			files = (
 				474BCF5F1713D7A200647216 /* main.m in Sources */,
 				474BCF631713D7A200647216 /* AppDelegate.m in Sources */,
-				474BCF721713D7A200647216 /* ViewController.m in Sources */,
 				474BCFA41713D82200647216 /* AFHTTPClient.m in Sources */,
 				474BCFA61713D82200647216 /* AFHTTPRequestOperation.m in Sources */,
 				474BCFA81713D82200647216 /* AFImageRequestOperation.m in Sources */,
@@ -402,6 +433,10 @@
 				474BCFB41713D82200647216 /* UIImageView+AFNetworking.m in Sources */,
 				474BCFBA1714265800647216 /* WebRequestProxy.m in Sources */,
 				47448F63172CDB0900AC099D /* QuestionsRequestProxy.m in Sources */,
+				476EA450173CA38C00CCDEBD /* MainTabBarViewController.m in Sources */,
+				476EA453173CA51100CCDEBD /* UserProfileViewController.m in Sources */,
+				476EA456173CA9A300CCDEBD /* QuestionsTableViewController.m in Sources */,
+				476EA45A173CADB400CCDEBD /* QuestionSimpleInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +456,7 @@
 				474BCFB51713D82200647216 /* UIImageView+AFNetworking.m in Sources */,
 				474BCFBB1714265800647216 /* WebRequestProxy.m in Sources */,
 				47448F64172CDB0900AC099D /* QuestionsRequestProxy.m in Sources */,
+				476EA45B173CADB400CCDEBD /* QuestionSimpleInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
