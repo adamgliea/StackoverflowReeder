@@ -54,6 +54,10 @@
 		476EA456173CA9A300CCDEBD /* QuestionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 476EA455173CA9A300CCDEBD /* QuestionsTableViewController.m */; };
 		476EA45A173CADB400CCDEBD /* QuestionSimpleInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 476EA459173CADB400CCDEBD /* QuestionSimpleInfo.m */; };
 		476EA45B173CADB400CCDEBD /* QuestionSimpleInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 476EA459173CADB400CCDEBD /* QuestionSimpleInfo.m */; };
+		47F775DB1744E8B20035D6E7 /* QuestSimpleInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F775DA1744E8B20035D6E7 /* QuestSimpleInfoCell.m */; };
+		47F775E01744EE510035D6E7 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 47F775DD1744EE510035D6E7 /* SVProgressHUD.bundle */; };
+		47F775E11744EE510035D6E7 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F775DF1744EE510035D6E7 /* SVProgressHUD.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		47F775E31744EEA70035D6E7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47F775E21744EEA70035D6E7 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +126,12 @@
 		476EA455173CA9A300CCDEBD /* QuestionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestionsTableViewController.m; path = Controller/QuestionsTableViewController.m; sourceTree = "<group>"; };
 		476EA458173CADB400CCDEBD /* QuestionSimpleInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuestionSimpleInfo.h; path = DataModel/QuestionSimpleInfo.h; sourceTree = "<group>"; };
 		476EA459173CADB400CCDEBD /* QuestionSimpleInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestionSimpleInfo.m; path = DataModel/QuestionSimpleInfo.m; sourceTree = "<group>"; };
+		47F775D91744E8B20035D6E7 /* QuestSimpleInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestSimpleInfoCell.h; sourceTree = "<group>"; };
+		47F775DA1744E8B20035D6E7 /* QuestSimpleInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestSimpleInfoCell.m; sourceTree = "<group>"; };
+		47F775DD1744EE510035D6E7 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		47F775DE1744EE510035D6E7 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		47F775DF1744EE510035D6E7 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		47F775E21744EEA70035D6E7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47F775E31744EEA70035D6E7 /* QuartzCore.framework in Frameworks */,
 				47448F68172CDB7A00AC099D /* MobileCoreServices.framework in Frameworks */,
 				47448F66172CDB4800AC099D /* SystemConfiguration.framework in Frameworks */,
 				474BCF531713D7A200647216 /* UIKit.framework in Frameworks */,
@@ -182,6 +193,7 @@
 		474BCF511713D7A200647216 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				47F775E21744EEA70035D6E7 /* QuartzCore.framework */,
 				47448F67172CDB7A00AC099D /* MobileCoreServices.framework */,
 				47448F65172CDB4800AC099D /* SystemConfiguration.framework */,
 				474BCF521713D7A200647216 /* UIKit.framework */,
@@ -195,6 +207,7 @@
 		474BCF581713D7A200647216 /* StackoverflowReeder */ = {
 			isa = PBXGroup;
 			children = (
+				47F775D81744E87F0035D6E7 /* View */,
 				476EA44D173CA28B00CCDEBD /* Controller */,
 				474BCFB61713D85D00647216 /* Model */,
 				474BCF901713D82200647216 /* AFNetworking */,
@@ -202,6 +215,7 @@
 				474BCF621713D7A200647216 /* AppDelegate.m */,
 				474BCF6A1713D7A200647216 /* MainStoryboard_iPhone.storyboard */,
 				474BCF6D1713D7A200647216 /* MainStoryboard_iPad.storyboard */,
+				47F775DC1744EE510035D6E7 /* SVProgressHUD */,
 				474BCF591713D7A200647216 /* Supporting Files */,
 			);
 			path = StackoverflowReeder;
@@ -309,6 +323,25 @@
 			name = DataModel;
 			sourceTree = "<group>";
 		};
+		47F775D81744E87F0035D6E7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				47F775D91744E8B20035D6E7 /* QuestSimpleInfoCell.h */,
+				47F775DA1744E8B20035D6E7 /* QuestSimpleInfoCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		47F775DC1744EE510035D6E7 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				47F775DD1744EE510035D6E7 /* SVProgressHUD.bundle */,
+				47F775DE1744EE510035D6E7 /* SVProgressHUD.h */,
+				47F775DF1744EE510035D6E7 /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -386,6 +419,7 @@
 				474BCF691713D7A200647216 /* Default-568h@2x.png in Resources */,
 				474BCF6C1713D7A200647216 /* MainStoryboard_iPhone.storyboard in Resources */,
 				474BCF6F1713D7A200647216 /* MainStoryboard_iPad.storyboard in Resources */,
+				47F775E01744EE510035D6E7 /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +471,8 @@
 				476EA453173CA51100CCDEBD /* UserProfileViewController.m in Sources */,
 				476EA456173CA9A300CCDEBD /* QuestionsTableViewController.m in Sources */,
 				476EA45A173CADB400CCDEBD /* QuestionSimpleInfo.m in Sources */,
+				47F775DB1744E8B20035D6E7 /* QuestSimpleInfoCell.m in Sources */,
+				47F775E11744EE510035D6E7 /* SVProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

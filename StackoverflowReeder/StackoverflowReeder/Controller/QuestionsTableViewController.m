@@ -7,8 +7,15 @@
 //
 
 #import "QuestionsTableViewController.h"
+#import "QuestSimpleInfoCell.h"
+#import "QuestionSimpleInfo.h"
+#import "QuestionsRequestProxy.h"
+#import "SVProgressHUD.h"
 
 @interface QuestionsTableViewController ()
+
+@property (strong, nonatomic) NSMutableArray *quests;
+@property (strong, nonatomic) QuestionsRequestProxy *questionsProxy;
 
 @end
 
@@ -42,6 +49,16 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self.questionsProxy questionsBySort:QuestionSortType_Last_Activity_Date
+                           questionCount:20
+                               pageIndex:1
+                               ascending:NO];
+    [SVProgressHUD showWithStatus:@"同步中"];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -52,24 +69,22 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return self.quests.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"QuestionSimpleInfoTableCell";
+    QuestSimpleInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
+    QuestionSimpleInfo *info = self.quests[indexPath.row];
+    cell.titleLabel.text = info.title;
     
     return cell;
 }
@@ -124,6 +139,54 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+}
+
+#pragma mark --
+#pragma mark - Set/Get Functions
+#pragma mark --
+
+- (NSMutableArray*)quests {
+    if (_quests == nil) {
+        _quests = [[NSMutableArray alloc] init];
+    }
+    
+    return _quests;
+}
+
+- (QuestionsRequestProxy*)questionsProxy {
+    if (_questionsProxy == nil) {
+        _questionsProxy = [[QuestionsRequestProxy alloc] init];
+        _questionsProxy.delegate = self;
+    }
+    
+    return _questionsProxy;
+}
+
+#pragma mark --
+#pragma mark - WebQuestionsDelegate
+#pragma mark --
+
+- (void)getQuestionsDidFinish:(NSDictionary*)result
+                        error:(NSError*)error {
+    NSArray *questions = result[@"items"];
+    [questions enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        NSDictionary *questionInfo = obj;
+        QuestionSimpleInfo *simpleInfo = [[QuestionSimpleInfo alloc] initWithInfo:questionInfo];
+        
+        [self.quests addObject:simpleInfo];
+    }];
+    
+    [SVProgressHUD dismiss];
+    
+    [self.tableView reloadData];
+}
+
+- (void)getQuestionDidFinish:(NSDictionary*)result
+                       error:(NSError*)error {
+}
+
+- (void)getQuestionAnswersDidFinish:(NSDictionary*)result
+                              error:(NSError*)error {
 }
 
 @end

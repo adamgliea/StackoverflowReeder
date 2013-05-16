@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface QuestionsTableViewController : UITableViewController
+#import "WebQuestionsDelegate.h"
+
+@interface QuestionsTableViewController : UITableViewController <WebQuestionsDelegate>
 
 @end

@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QuestionSimpleInfoTableCell" rowHeight="59" id="jcT-mF-95y">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QuestionSimpleInfoTableCell" rowHeight="59" id="jcT-mF-95y" customClass="QuestSimpleInfoCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="59"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -36,6 +36,9 @@
                                     <constraint firstItem="xS6-DG-mjq" firstAttribute="leading" secondItem="jcT-mF-95y" secondAttribute="leading" constant="20" type="default" id="nLb-TL-Bro"/>
                                     <constraint firstAttribute="trailing" secondItem="xS6-DG-mjq" secondAttribute="trailing" constant="20" type="default" id="uoe-FZ-dNu"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="titleLabel" destination="xS6-DG-mjq" id="9cr-uj-8YQ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -109,6 +112,12 @@
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="QuestSimpleInfoCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/QuestSimpleInfoCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
         </class>
         <class className="QuestionsTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/QuestionsTableViewController.h"/>
